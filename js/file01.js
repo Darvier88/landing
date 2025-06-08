@@ -5,7 +5,6 @@ const showToast = () => {
     if (toast) {
         toast.classList.add("md:block");
     }
-
 };
 
 const showVideo = () => {
@@ -16,7 +15,6 @@ const showVideo = () => {
         });
     }
 };
-
 (() => {
     showToast();
     showVideo();
