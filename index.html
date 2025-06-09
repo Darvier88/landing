@@ -1,151 +1,133 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aserrio Pacheco</title>
 
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <title>Vite App</title>
+  <!-- Tailwind CSS desde CDN -->
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 
-  </head>
-  <body>
-    
-          <nav class="bg-white border-gray-200 dark:bg-gray-900">
-      <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
-          <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" />
-          <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
-        </a>
-        <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700" aria-controls="navbar-default" aria-expanded="false">
-          <span class="sr-only">Open main menu</span>
-          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-          </svg>
-        </button>
-        <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-          <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-            <li>
-              <a href="#" class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Inicio</a>
-            </li>
-            <li>
-              <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Servicios</a>
-            </li>
-            <li>
-              <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Nosotros</a>
-            </li>
-            <li>
-              <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contacto</a>
-            </li>
-          </ul>
-        </div>
-      </div>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@300;500;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    .font-display { font-family: 'Playfair Display', serif; }
+    .font-heading { font-family: 'Fira Sans Condensed', sans-serif; }
+    .font-sans { font-family: 'Arial', sans-serif; }
+  </style>
+</head>
+
+<body class="font-sans text-yellow-900 bg-yellow-100">
+
+  <!-- NAV -->
+  <header class="bg-yellow-200 shadow">
+    <div class="container mx-auto flex justify-between items-center py-6 px-4">
+      <h1 class="font-heading text-2xl text-yellow-900">Aserrio Pacheco</h1>
+      <nav class="hidden md:flex space-x-6">
+        <a href="#productos" class="hover:text-amber-800">Productos</a>
+        <a href="#precios" class="hover:text-amber-800">Precios</a>
+        <a href="#contacto" class="hover:text-amber-800">Contacto</a>
+      </nav>
+      <button id="menu-btn" class="md:hidden focus:outline-none">
+        <svg class="w-6 h-6 text-yellow-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" />
+        </svg>
+      </button>
+    </div>
+    <nav id="mobile-menu" class="hidden md:hidden bg-yellow-100 px-4 pb-4">
+      <a href="#productos" class="block py-2 border-b">Productos</a>
+      <a href="#precios" class="block py-2 border-b">Precios</a>
+      <a href="#contacto" class="block py-2">Contacto</a>
     </nav>
+  </header>
 
-    <main class="bg-slate-50 dark:bg-gray-900">
-      <div id="container-01" class="mx-auto px-4 py-20 text-center">
-        <h1 class="text-4xl font-extrabold tracking-tight dark:text-white">Tu presencia digital comienza aquí</h1>
-        <p class="mt-6 text-lg leading-relaxed text-gray-600 max-w-2xl mx-auto dark:text-gray-300">
-          Creamos experiencias web atractivas y rápidas con Tailwind CSS 4.1. Dale vida a tus ideas con un diseño moderno y responsivo.
-        </p>
-        <div id="container-02" class="mt-8 flex justify-center gap-4">
-          <button id="start" class="inline-block px-6 py-3 text-white bg-blue-600 rounded-lg">Comenzar</button>
-          <button id="demo" class="inline-block px-6 py-3 border border-gray-300 text-gray-700 rounded-lg dark:border-gray-600 dark:text-white">Ver demo</button>
-        </div>
+  <!-- HERO -->
+  <section class="bg-yellow-50 py-20 text-center px-4">
+    <h2 class="font-display text-4xl mb-4">Madera de calidad directamente del aserradero</h2>
+    <p class="text-lg mb-8">Facilitamos tu compra con una presentación clara de nuestros productos y precios. ¡Sin confusiones, sin demoras!</p>
+    <a href="#productos" class="bg-amber-700 text-white px-6 py-3 rounded-lg hover:bg-amber-800">Ver productos</a>
+  </section>
+
+  <!-- PRODUCTOS -->
+  <section id="productos" class="container mx-auto py-16 px-4">
+    <h3 class="font-heading text-3xl text-center mb-10">Nuestros Productos</h3>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="border border-yellow-300 bg-white p-4 rounded-lg text-center">
+        <img src="public/assets/tablas.jpg" alt="Tablas de madera" class="w-full h-40 object-cover mb-4 rounded">
+        <h4 class="font-heading text-xl mb-2">Tablas de Madera</h4>
+        <p>Perfectas para construcción o muebles. Variedad de grosores y largos.</p>
       </div>
+      <div class="border border-yellow-300 bg-white p-4 rounded-lg text-center">
+        <img src="public/assets/vigas.jpg" alt="Vigas de madera" class="w-full h-40 object-cover mb-4 rounded">
+        <h4 class="font-heading text-xl mb-2">Vigas y Postes</h4>
+        <p>Vigas resistentes para estructuras. Cortes personalizados bajo pedido.</p>
+      </div>
+      <div class="border border-yellow-300 bg-white p-4 rounded-lg text-center">
+        <img src="public/assets/astillas.jpg" alt="Astillas y leña" class="w-full h-40 object-cover mb-4 rounded">
+        <h4 class="font-heading text-xl mb-2">Astillas y Leña</h4>
+        <p>Leña seca lista para uso doméstico o industrial.</p>
+      </div>
+    </div>
+  </section>
 
-      <div id="toast-interactive"
-         class="hidden fixed right-5 bottom-5 flex items-center w-full max-w-xs p-4 space-x-4 text-gray-500 bg-white divide-x divide-gray-200 rounded-lg shadow-sm dark:text-gray-400 dark:divide-gray-700 dark:bg-gray-800"
-         role="alert">
-         <div class="flex">
+  <!-- PRECIOS -->
+  <section id="precios" class="bg-yellow-200 py-16 px-4">
+    <div class="container mx-auto">
+      <h3 class="font-heading text-3xl text-center mb-10">Precios Referenciales</h3>
+      <div class="max-w-3xl mx-auto">
+        <table class="w-full text-left bg-white shadow rounded-lg overflow-hidden">
+          <thead class="bg-amber-700 text-white">
+            <tr>
+              <th class="p-4">Producto</th>
+              <th class="p-4">Unidad</th>
+              <th class="p-4">Precio</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-yellow-100">
+              <td class="p-4">Tabla de pino (2x4")</td>
+              <td class="p-4">m³</td>
+              <td class="p-4">$180.00</td>
+            </tr>
+            <tr class="border-b border-yellow-100">
+              <td class="p-4">Viga 6x6"</td>
+              <td class="p-4">m³</td>
+              <td class="p-4">$220.00</td>
+            </tr>
+            <tr>
+              <td class="p-4">Leña seca</td>
+              <td class="p-4">Bolsa 25kg</td>
+              <td class="p-4">$12.00</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="text-center text-sm mt-4 text-yellow-800">*Precios sujetos a cambios. Confirma vía WhatsApp.</p>
+      </div>
+    </div>
+  </section>
 
-             <!-- Content -->
-             <div class="ms-3 text-sm font-normal">
-                 <span class="mb-1 text-sm font-semibold text-gray-900 dark:text-white">Suscríbete ahora</span>
-                 <div class="mb-2">Suscríbete ahora para obtener beneficios de cliente premium y pro.</div>
-                 <div class="grid grid-cols-2 gap-2">
-                 <div>
-                     <a href="#"
-                     class="inline-flex justify-center w-full px-2 py-1.5 text-xs font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-500 dark:hover:bg-blue-600 dark:focus:ring-blue-800">Sí, quiero</a>
-                 </div>
-                 <div>
-                     <a href="#"
-                     class="inline-flex justify-center w-full px-2 py-1.5 text-xs font-medium text-gray-900 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:bg-gray-600 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-700">No ahora</a>
-                 </div>
-                 </div>
-             </div>
+  <!-- CONTACTO -->
+  <section id="contacto" class="container mx-auto py-20 px-4">
+    <h3 class="font-heading text-3xl text-center mb-10">Contáctanos</h3>
+    <div class="max-w-xl mx-auto text-center space-y-4">
+      <p>¿Quieres cotizar o hacer un pedido? Escríbenos directamente:</p>
+      <a href="https://wa.me/1234567890" target="_blank" class="inline-block bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700">
+        Chatear por WhatsApp
+      </a>
+      <p class="text-sm text-yellow-800">Atención de lunes a sábado de 8am a 6pm</p>
+    </div>
+  </section>
 
-             <!-- Close button -->
-             <button type="button"
-                 class="ms-auto -mx-1.5 -my-1.5 p-1.5 inline-flex items-center justify-center w-8 h-8 text-gray-400 bg-white rounded-lg hover:text-gray-900 hover:bg-gray-100 focus:ring-2 focus:ring-gray-300 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700"
-                 data-dismiss-target="#toast-interactive" aria-label="Close">
-                 <span class="sr-only">Close</span>
-                 <svg class="w-3 h-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14" aria-hidden="true">
-                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                     d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-                 </svg>
-             </button>
-         </div>
-     </div>
+  <!-- FOOTER -->
+  <footer class="bg-yellow-900 text-white text-center py-6">
+    <p class="text-sm">&copy; 2025 Aserrio Pacheco</p>
+  </footer>
 
-    </main>
-    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.3.0/dist/flowbite.min.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
-    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.3.0/dist/flowbite.min.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+  <script>
+    document.getElementById('menu-btn').addEventListener('click', function () {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+  </script>
 
-    <!-- Referencia al documento file01.js como módulo -->
-    <script type="module" src="./js/file01.js"></script>
-  </body>
-
-   <section class="bg-white dark:bg-gray-900">
-
-      <div id="container-03" class="px-4 py-8 mx-auto max-w-md md:max-w-xl">
-         <div id="container-04" class="grid grid-cols-2 gap-4 md:grid-cols-4">
-             <img src="https://placehold.co/50" alt="Imagen 1" class="w-full h-auto rounded">
-             <img src="https://placehold.co/50" alt="Imagen 2" class="w-full h-auto rounded">
-             <img src="https://placehold.co/50" alt="Imagen 3" class="w-full h-auto rounded">
-             <img src="https://placehold.co/50" alt="Imagen 4" class="w-full h-auto rounded">
-         </div>
-     </div>
-    </section>
-    <div id="toast-interactive"
-         class="hidden fixed right-5 bottom-5 flex items-center w-full max-w-xs p-4 space-x-4 text-gray-500 bg-white divide-x divide-gray-200 rounded-lg shadow-sm dark:text-gray-400 dark:divide-gray-700 dark:bg-gray-800"
-         role="alert">
-         <div class="flex">
-
-             <!-- Content -->
-             <div class="ms-3 text-sm font-normal">
-                 <span class="mb-1 text-sm font-semibold text-gray-900 dark:text-white">Suscríbete ahora</span>
-                 <div class="mb-2">Suscríbete ahora para obtener beneficios de cliente premium y pro.</div>
-                 <div class="grid grid-cols-2 gap-2">
-                 <div>
-                     <a href="#"
-                     class="inline-flex justify-center w-full px-2 py-1.5 text-xs font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-500 dark:hover:bg-blue-600 dark:focus:ring-blue-800">Sí, quiero</a>
-                 </div>
-                 <div>
-                     <a href="#"
-                     class="inline-flex justify-center w-full px-2 py-1.5 text-xs font-medium text-gray-900 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:bg-gray-600 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-700">No ahora</a>
-                 </div>
-                 </div>
-             </div>
-
-             <!-- Close button -->
-             <button type="button"
-                 class="ms-auto -mx-1.5 -my-1.5 p-1.5 inline-flex items-center justify-center w-8 h-8 text-gray-400 bg-white rounded-lg hover:text-gray-900 hover:bg-gray-100 focus:ring-2 focus:ring-gray-300 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700"
-                 data-dismiss-target="#toast-interactive" aria-label="Close">
-                 <span class="sr-only">Close</span>
-                 <svg class="w-3 h-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14" aria-hidden="true">
-                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                     d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-                 </svg>
-             </button>
-         </div>
-     </div>
-    <script type="module" src="/js/file01.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.3.0/dist/flowbite.min.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
-  </body>
-
+</body>
 </html>
