@@ -20,13 +20,15 @@
 <body class="font-sans text-yellow-900 bg-yellow-100">
 
   <!-- NAV -->
-  <header class="bg-yellow-200 shadow">
+  <header class="bg-yellow-200 shadow sticky top-0 z-50 transition-all duration-300">
     <div class="container mx-auto flex justify-between items-center py-6 px-4">
-      <h1 class="font-heading text-2xl text-yellow-900">Aserrio Pacheco</h1>
+      <h1 class="font-heading text-2xl text-yellow-900 tracking-wide">Aserrio Pacheco</h1>
       <nav class="hidden md:flex space-x-6">
-        <a href="#productos" class="hover:text-amber-800">Productos</a>
-        <a href="#precios" class="hover:text-amber-800">Precios</a>
-        <a href="#contacto" class="hover:text-amber-800">Contacto</a>
+        <a href="#quienes" class="hover:text-amber-800 text-yellow-900 transition-colors duration-200 font-heading">Quiénes somos</a>
+        <a href="#productos" class="hover:text-amber-800 text-yellow-900 transition-colors duration-200 font-heading">Productos</a>
+        <a href="#precios" class="hover:text-amber-800 text-yellow-900 transition-colors duration-200 font-heading">Precios</a>
+        <a href="#contacto" class="hover:text-amber-800 text-yellow-900 transition-colors duration-200 font-heading">Contacto</a>
+        <a href="#interaccion" class="hover:text-amber-800 text-yellow-900 transition-colors duration-200 font-heading">Interacción</a>
       </nav>
       <button id="menu-btn" class="md:hidden focus:outline-none">
         <svg class="w-6 h-6 text-yellow-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -35,69 +37,150 @@
       </button>
     </div>
     <nav id="mobile-menu" class="hidden md:hidden bg-yellow-100 px-4 pb-4">
-      <a href="#productos" class="block py-2 border-b">Productos</a>
-      <a href="#precios" class="block py-2 border-b">Precios</a>
-      <a href="#contacto" class="block py-2">Contacto</a>
+      <a href="#quienes" class="block py-2 border-b text-yellow-900 font-heading">Quiénes somos</a>
+      <a href="#productos" class="block py-2 border-b text-yellow-900 font-heading">Productos</a>
+      <a href="#precios" class="block py-2 border-b text-yellow-900 font-heading">Precios</a>
+      <a href="#contacto" class="block py-2 border-b text-yellow-900 font-heading">Contacto</a>
+      <a href="#interaccion" class="block py-2 text-yellow-900 font-heading">Interacción</a>
     </nav>
   </header>
 
-  <!-- HERO -->
-  <section class="bg-yellow-50 py-20 text-center px-4">
-    <h2 class="font-display text-4xl mb-4">Madera de calidad directamente del aserradero</h2>
-    <p class="text-lg mb-8">Facilitamos tu compra con una presentación clara de nuestros productos y precios. ¡Sin confusiones, sin demoras!</p>
-    <a href="#productos" class="bg-amber-700 text-white px-6 py-3 rounded-lg hover:bg-amber-800">Ver productos</a>
-  </section>
-
-  <!-- PRODUCTOS -->
-  <section id="productos" class="container mx-auto py-16 px-4">
-    <h3 class="font-heading text-3xl text-center mb-10">Nuestros Productos</h3>
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="border border-yellow-300 bg-white p-4 rounded-lg text-center">
-        <img src="public/assets/tablas.jpg" alt="Tablas de madera" class="w-full h-40 object-cover mb-4 rounded">
-        <h4 class="font-heading text-xl mb-2">Tablas de Madera</h4>
-        <p>Perfectas para construcción o muebles. Variedad de grosores y largos.</p>
-      </div>
-      <div class="border border-yellow-300 bg-white p-4 rounded-lg text-center">
-        <img src="public/assets/vigas.jpg" alt="Vigas de madera" class="w-full h-40 object-cover mb-4 rounded">
-        <h4 class="font-heading text-xl mb-2">Vigas y Postes</h4>
-        <p>Vigas resistentes para estructuras. Cortes personalizados bajo pedido.</p>
-      </div>
-      <div class="border border-yellow-300 bg-white p-4 rounded-lg text-center">
-        <img src="public/assets/astillas.jpg" alt="Astillas y leña" class="w-full h-40 object-cover mb-4 rounded">
-        <h4 class="font-heading text-xl mb-2">Astillas y Leña</h4>
-        <p>Leña seca lista para uso doméstico o industrial.</p>
+  <!-- SECCIÓN 1: QUIÉNES SOMOS -->
+  <section id="quienes" class="container mx-auto py-16 px-4">
+    <div class="flex flex-col md:flex-row items-center gap-8">
+      <img src="public/assets/aserradero.jpg" alt="Aserradero" class="w-full md:w-1/2 rounded-xl shadow-lg object-cover h-64 mb-6 md:mb-0">
+      <div>
+        <h2 class="font-display text-4xl mb-4 text-yellow-900">Quiénes somos</h2>
+        <p class="text-lg text-yellow-800 mb-4">
+          Somos un aserradero familiar con más de 5 años de experiencia, comprometidos con la calidad y la atención personalizada. Trabajamos con maderas seleccionadas y procesos responsables.
+        </p>
+        <ul class="list-disc list-inside text-yellow-900 space-y-1">
+          <li>Atención personalizada y asesoría especializada</li>
+          <li>Ofrecemos materiales de la más alta calidad al mejor precio.</li>
+          <li>Te ayudamos a conseguir un fletero confiable para tu pedido.</li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <!-- PRECIOS -->
+  <!-- SECCIÓN 2: PRODUCTOS -->
+  <section id="productos" class="container mx-auto py-16 px-4">
+    <h3 class="font-heading text-3xl text-center mb-10 tracking-wide">Nuestros Productos</h3>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="border border-yellow-300 bg-white p-6 rounded-xl text-center shadow-md hover:shadow-xl transform hover:-translate-y-2 hover:scale-105 transition-all duration-200">
+        <img src="public/assets/tablas.jpg" alt="Tablas de madera" class="w-full h-48 object-cover mb-4 rounded-lg transition-transform duration-200 hover:scale-105">
+        <h4 class="font-heading text-xl mb-2 text-yellow-900">Tablas de madera</h4>
+        <ul class="text-yellow-800 text-sm">
+          <li>Encofrado, SD, Dura, Laurel</li>
+        </ul>
+      </div>
+      <div class="border border-yellow-300 bg-white p-6 rounded-xl text-center shadow-md hover:shadow-xl transform hover:-translate-y-2 hover:scale-105 transition-all duration-200">
+        <img src="public/assets/tablones.jpg" alt="Tablones de madera" class="w-full h-48 object-cover mb-4 rounded-lg transition-transform duration-200 hover:scale-105">
+        <h4 class="font-heading text-xl mb-2 text-yellow-900">Tablones de madera</h4>
+        <ul class="text-yellow-800 text-sm">
+          <li>SD y Duro</li>
+        </ul>
+      </div>
+      <div class="border border-yellow-300 bg-white p-6 rounded-xl text-center shadow-md hover:shadow-xl transform hover:-translate-y-2 hover:scale-105 transition-all duration-200">
+        <img src="public/assets/caña_redonda.jpg" alt="Cañas redondas" class="w-full h-48 object-cover mb-4 rounded-lg transition-transform duration-200 hover:scale-105">
+        <h4 class="font-heading text-xl mb-2 text-yellow-900">Cañas redondas</h4>
+        <ul class="text-yellow-800 text-sm">
+          <li>Redondas, latilladas, cortadas</li>
+        </ul>
+      </div>
+      <div class="border border-yellow-300 bg-white p-6 rounded-xl text-center shadow-md hover:shadow-xl transform hover:-translate-y-2 hover:scale-105 transition-all duration-200 flex flex-col justify-center">
+        <img src="public/assets/caña_picada.jpg" alt="Cañas Picadas" class="w-full h-48 object-cover mb-4 rounded-lg transition-transform duration-200 hover:scale-105">
+        <h4 class="font-heading text-xl mb-2 text-yellow-900">Cañas Picadas</h4>
+        <ul class="text-yellow-800 text-sm">
+          <li>Enteras, cortadas</li>
+        </ul>
+      </div>
+      <div class="border border-yellow-300 bg-white p-6 rounded-xl text-center shadow-md hover:shadow-xl transform hover:-translate-y-2 hover:scale-105 transition-all duration-200">
+        <img src="public/assets/vigas.jpg" alt="Vigas" class="w-full h-48 object-cover mb-4 rounded-lg transition-transform duration-200 hover:scale-105">
+        <h4 class="font-heading text-xl mb-2 text-yellow-900">Vigas</h4>
+        <ul class="text-yellow-800 text-sm">
+          <li>Para techos y estructuras</li>
+        </ul>
+      </div>
+      <div class="border border-yellow-300 bg-white p-6 rounded-xl text-center shadow-md hover:shadow-xl transform hover:-translate-y-2 hover:scale-105 transition-all duration-200">
+        <img src="public/assets/cuartones.jpg" alt="Cuartones" class="w-full h-48 object-cover mb-4 rounded-lg transition-transform duration-200 hover:scale-105">
+        <h4 class="font-heading text-xl mb-2 text-yellow-900">Cuartones</h4>
+        <ul class="text-yellow-800 text-sm">
+          <li>SD y Duro, 5x5 y 4x5 cm</li>
+        </ul>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- SECCIÓN 3: PRECIOS -->
   <section id="precios" class="bg-yellow-200 py-16 px-4">
     <div class="container mx-auto">
-      <h3 class="font-heading text-3xl text-center mb-10">Precios Referenciales</h3>
-      <div class="max-w-3xl mx-auto">
-        <table class="w-full text-left bg-white shadow rounded-lg overflow-hidden">
-          <thead class="bg-amber-700 text-white">
+      <h3 class="font-heading text-3xl text-center mb-10 tracking-wide">Precios Referenciales</h3>
+      <div class="max-w-3xl mx-auto overflow-x-auto">
+        <table class="min-w-[350px] w-full mx-auto bg-white shadow-lg rounded-xl overflow-hidden">
+          <thead class="bg-amber-700">
             <tr>
-              <th class="p-4">Producto</th>
-              <th class="p-4">Unidad</th>
-              <th class="p-4">Precio</th>
+              <th class="p-4 text-center text-yellow-900 font-heading text-lg tracking-wide">Producto</th>
+              <th class="p-4 text-center text-yellow-900 font-heading text-lg tracking-wide">Precio (USD)</th>
             </tr>
           </thead>
           <tbody>
-            <tr class="border-b border-yellow-100">
-              <td class="p-4">Tabla de pino (2x4")</td>
-              <td class="p-4">m³</td>
-              <td class="p-4">$180.00</td>
+            <tr class="even:bg-yellow-50 hover:bg-yellow-100 transition">
+              <td class="p-4 text-center font-heading">Tabla encofrado</td>
+              <td class="p-4 text-center font-heading">$4.50</td>
             </tr>
-            <tr class="border-b border-yellow-100">
-              <td class="p-4">Viga 6x6"</td>
-              <td class="p-4">m³</td>
-              <td class="p-4">$220.00</td>
+            <tr class="even:bg-yellow-50 hover:bg-yellow-100 transition">
+              <td class="p-4 text-center font-heading">Tabla SD</td>
+              <td class="p-4 text-center font-heading">$6.00</td>
             </tr>
-            <tr>
-              <td class="p-4">Leña seca</td>
-              <td class="p-4">Bolsa 25kg</td>
-              <td class="p-4">$12.00</td>
+            <tr class="even:bg-yellow-50 hover:bg-yellow-100 transition">
+              <td class="p-4 text-center font-heading">Tabla Dura</td>
+              <td class="p-4 text-center font-heading">$12.00</td>
+            </tr>
+            <tr class="even:bg-yellow-50 hover:bg-yellow-100 transition">
+              <td class="p-4 text-center font-heading">Tabla de laurel</td>
+              <td class="p-4 text-center font-heading">$5.50</td>
+            </tr>
+            <tr class="even:bg-yellow-50 hover:bg-yellow-100 transition">
+              <td class="p-4 text-center font-heading">Tablón SD</td>
+              <td class="p-4 text-center font-heading">$8.00</td>
+            </tr>
+            <tr class="even:bg-yellow-50 hover:bg-yellow-100 transition">
+              <td class="p-4 text-center font-heading">Tablón Duro</td>
+              <td class="p-4 text-center font-heading">$12.00</td>
+            </tr>
+            <tr class="even:bg-yellow-50 hover:bg-yellow-100 transition">
+              <td class="p-4 text-center font-heading">Caña redonda</td>
+              <td class="p-4 text-center font-heading">$3.00</td>
+            </tr>
+            <tr class="even:bg-yellow-50 hover:bg-yellow-100 transition">
+              <td class="p-4 text-center font-heading">Caña latillada</td>
+              <td class="p-4 text-center font-heading">$4.00</td>
+            </tr>
+            <tr class="even:bg-yellow-50 hover:bg-yellow-100 transition">
+              <td class="p-4 text-center font-heading">Caña picada</td>
+              <td class="p-4 text-center font-heading">$3.50</td>
+            </tr>
+            <tr class="even:bg-yellow-50 hover:bg-yellow-100 transition">
+              <td class="p-4 text-center font-heading">Viga</td>
+              <td class="p-4 text-center font-heading">$16.00</td>
+            </tr>
+            <tr class="even:bg-yellow-50 hover:bg-yellow-100 transition">
+              <td class="p-4 text-center font-heading">Cuartón SD 5x5 cm</td>
+              <td class="p-4 text-center font-heading">$4.00</td>
+            </tr>
+            <tr class="even:bg-yellow-50 hover:bg-yellow-100 transition">
+              <td class="p-4 text-center font-heading">Cuartón SD 4x5 cm</td>
+              <td class="p-4 text-center font-heading">$3.00</td>
+            </tr>
+            <tr class="even:bg-yellow-50 hover:bg-yellow-100 transition">
+              <td class="p-4 text-center font-heading">Cuartón D 5x5 cm</td>
+              <td class="p-4 text-center font-heading">$8.00</td>
+            </tr>
+            <tr class="even:bg-yellow-50 hover:bg-yellow-100 transition">
+              <td class="p-4 text-center font-heading">Cuartón D 4x5 cm</td>
+              <td class="p-4 text-center font-heading">$6.00</td>
             </tr>
           </tbody>
         </table>
@@ -106,28 +189,63 @@
     </div>
   </section>
 
-  <!-- CONTACTO -->
+  <!-- SECCIÓN 4: FORMULARIO DE CONTACTO/SUSCRIPCIÓN -->
   <section id="contacto" class="container mx-auto py-20 px-4">
-    <h3 class="font-heading text-3xl text-center mb-10">Contáctanos</h3>
-    <div class="max-w-xl mx-auto text-center space-y-4">
-      <p>¿Quieres cotizar o hacer un pedido? Escríbenos directamente:</p>
-      <a href="https://wa.me/1234567890" target="_blank" class="inline-block bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700">
-        Chatear por WhatsApp
-      </a>
-      <p class="text-sm text-yellow-800">Atención de lunes a sábado de 8am a 6pm</p>
+    <h3 class="font-heading text-3xl text-center mb-10 tracking-wide">Contáctanos</h3>
+    <form id="formulario-contacto" class="max-w-xl mx-auto bg-white rounded-xl shadow-lg p-8 space-y-6">
+      <div>
+        <label for="nombre" class="block text-yellow-900 font-heading mb-2">Nombre</label>
+        <input id="nombre" name="nombre" type="text" required class="w-full border border-yellow-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-amber-700 transition">
+      </div>
+      <div>
+        <label for="motivo" class="block text-yellow-900 font-heading mb-2">Motivo</label>
+        <select id="motivo" name="motivo" required class="w-full border border-yellow-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-amber-700 transition">
+          <option value="">Selecciona una opción</option>
+          <option value="cotizacion">Cotización</option>
+          <option value="pedido">Pedido</option>
+          <option value="consulta">Consulta</option>
+        </select>
+      </div>
+      <div>
+        <label for="mensaje" class="block text-yellow-900 font-heading mb-2">Mensaje</label>
+        <input id="mensaje" name="mensaje" type="text" required class="w-full border border-yellow-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-amber-700 transition">
+      </div>
+      <button type="submit" class="w-full bg-amber-700 text-white font-heading py-3 rounded-lg shadow-lg hover:bg-amber-800 transform hover:-translate-y-1 hover:scale-105 transition-all duration-200">Enviar</button>
+    </form>
+  </section>
+
+  <!-- SECCIÓN 5: INTERACCIÓN CON DATOS DEL FORMULARIO -->
+  <section id="interaccion" class="container mx-auto py-16 px-4">
+    <h3 class="font-heading text-3xl text-center mb-10 tracking-wide">Datos enviados</h3>
+    <div id="datos-formulario" class="max-w-xl mx-auto bg-white rounded-xl shadow-lg p-8 text-center text-yellow-900 font-heading text-lg min-h-[60px]">
+      <!-- Aquí se mostrarán los datos ingresados -->
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="bg-yellow-900 text-white text-center py-6">
-    <p class="text-sm">&copy; 2025 Aserrio Pacheco</p>
+    <p class="text-sm font-heading">&copy; 2025 Aserrio Pacheco</p>
   </footer>
 
   <script>
+    // Menú móvil
     document.getElementById('menu-btn').addEventListener('click', function () {
       document.getElementById('mobile-menu').classList.toggle('hidden');
     });
-  </script>
 
+    // Interacción con formulario
+    document.getElementById('formulario-contacto').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const nombre = document.getElementById('nombre').value;
+      const motivo = document.getElementById('motivo').options[document.getElementById('motivo').selectedIndex].text;
+      const mensaje = document.getElementById('mensaje').value;
+      document.getElementById('datos-formulario').innerHTML =
+        `<div class="mb-2"><span class="font-bold">Nombre:</span> ${nombre}</div>
+         <div class="mb-2"><span class="font-bold">Motivo:</span> ${motivo}</div>
+         <div class="mb-2"><span class="font-bold">Mensaje:</span> ${mensaje}</div>`;
+      document.getElementById('formulario-contacto').reset();
+      window.location.hash = "#interaccion";
+    });
+  </script>
 </body>
 </html>
