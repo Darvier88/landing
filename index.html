@@ -7,6 +7,8 @@
 
   <!-- Tailwind CSS desde CDN -->
   <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <!-- Flowbite CSS -->
+  <link href="https://unpkg.com/flowbite@2.3.0/dist/flowbite.min.css" rel="stylesheet" />
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@300;500;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
@@ -41,7 +43,6 @@
       <a href="#productos" class="block py-2 border-b text-yellow-900 font-heading">Productos</a>
       <a href="#precios" class="block py-2 border-b text-yellow-900 font-heading">Precios</a>
       <a href="#contacto" class="block py-2 border-b text-yellow-900 font-heading">Contacto</a>
-      <a href="#interaccion" class="block py-2 text-yellow-900 font-heading">Interacción</a>
     </nav>
   </header>
 
@@ -210,17 +211,17 @@
         <label for="mensaje" class="block text-yellow-900 font-heading mb-2">Mensaje</label>
         <input id="mensaje" name="mensaje" type="text" required class="w-full border border-yellow-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-amber-700 transition">
       </div>
-      <button type="submit" class="w-full bg-amber-700 text-white font-heading py-3 rounded-lg shadow-lg hover:bg-amber-800 transform hover:-translate-y-1 hover:scale-105 transition-all duration-200">Enviar</button>
+      <button 
+        type="submit"
+        class="w-full flex items-center justify-center gap-2 bg-amber-700 text-yellow-900 font-heading py-3 rounded-lg shadow-lg hover:bg-amber-800 transform hover:-translate-y-1 hover:scale-105 transition-all duration-200"
+      >
+        <svg class="w-5 h-5 text-yellow-900" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+        Enviar
+      </button>
     </form>
   </section>
 
-  <!-- SECCIÓN 5: INTERACCIÓN CON DATOS DEL FORMULARIO -->
-  <section id="interaccion" class="container mx-auto py-16 px-4">
-    <h3 class="font-heading text-3xl text-center mb-10 tracking-wide">Datos enviados</h3>
-    <div id="datos-formulario" class="max-w-xl mx-auto bg-white rounded-xl shadow-lg p-8 text-center text-yellow-900 font-heading text-lg min-h-[60px]">
-      <!-- Aquí se mostrarán los datos ingresados -->
-    </div>
-  </section>
+
 
   <!-- API de Faker -->
   <section class="bg-slate-50 dark:bg-gray-900">
@@ -309,27 +310,71 @@
   <footer class="bg-yellow-900 text-white text-center py-6">
     <p class="text-sm font-heading">&copy; 2025 Aserrio Pacheco</p>
   </footer>
+  
 
-  <script>
-    // Menú móvil
-    document.getElementById('menu-btn').addEventListener('click', function () {
-      document.getElementById('mobile-menu').classList.toggle('hidden');
-    });
-  </script>
-  <script type="module" src="/js/file01.js"></script>
-    // Interacción con formulario
-    document.getElementById('formulario-contacto').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const nombre = document.getElementById('nombre').value;
-      const motivo = document.getElementById('motivo').options[document.getElementById('motivo').selectedIndex].text;
-      const mensaje = document.getElementById('mensaje').value;
-      document.getElementById('datos-formulario').innerHTML =
-        `<div class="mb-2"><span class="font-bold">Nombre:</span> ${nombre}</div>
-         <div class="mb-2"><span class="font-bold">Motivo:</span> ${motivo}</div>
-         <div class="mb-2"><span class="font-bold">Mensaje:</span> ${mensaje}</div>`;
-      document.getElementById('formulario-contacto').reset();
-      window.location.hash = "#interaccion";
-    });
-  </script>
+  <!-- MODAL DE ÉXITO FLOWBITE -->
+<div id="modal-exito" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full bg-black/40">
+  <div class="relative w-full max-w-md max-h-full mx-auto mt-24">
+    <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+      <button type="button" class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center" data-modal-hide="modal-exito">
+        <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6.293 9.293a1 1 0 011.414 0L10 11.586l2.293-2.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+        <span class="sr-only">Cerrar modal</span>
+      </button>
+      <div class="p-6 text-center">
+        <svg aria-hidden="true" class="w-14 h-14 mx-auto mb-4 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1.293-11.293a1 1 0 00-1.586 1.586L10.414 10l-1.293 1.293a1 1 0 001.586 1.586L12 11.586l1.293 1.293a1 1 0 001.586-1.586L13.586 10l1.293-1.293a1 1 0 00-1.586-1.586L12 8.414 10.707 7.121z" clip-rule="evenodd"></path>
+        </svg>
+        <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">¡Gracias por tu mensaje!</h3>
+        <p class="mb-5 text-sm text-gray-500 dark:text-gray-400">
+          Hemos recibido tu mensaje y nos pondremos en contacto contigo lo antes posible.
+        </p>
+        <button data-modal-hide="modal-exito" type="button" class="text-white bg-amber-700 hover:bg-amber-800 focus:ring-4 focus:outline-none focus:ring-amber-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center">
+          Cerrar
+          <svg class="w-5 h-5 ml-2 -mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal de confirmación antes de enviar -->
+<div id="modal-confirmacion" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full bg-black/40">
+  <div class="relative w-full max-w-md max-h-full mx-auto mt-24">
+    <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+      <button type="button" class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center" data-modal-hide="modal-confirmacion">
+        <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6.293 9.293a1 1 0 011.414 0L10 11.586l2.293-2.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+        <span class="sr-only">Cerrar modal</span>
+      </button>
+      <div class="p-6 text-center">
+        <h3 class="mb-5 text-lg font-normal text-gray-700">¿Confirmas que los datos son correctos?</h3>
+        <div id="datos-confirmacion" class="mb-5 text-yellow-900 text-left"></div>
+        <div class="flex justify-center gap-4">
+          <button id="btn-cancelar-envio" data-modal-hide="modal-confirmacion" type="button" class="text-gray-700 bg-gray-200 hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5">Cancelar</button>
+          <button id="btn-confirmar-envio" type="button" data-modal-hide="modal-confirmacion" class="text-white bg-amber-700 hover:bg-amber-800 focus:ring-4 focus:outline-none focus:ring-amber-300 font-medium rounded-lg text-sm px-5 py-2.5">
+            Confirmar y Enviar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Botón oculto para abrir modal de confirmación -->
+<button id="abrir-modal-confirmacion" type="button" data-modal-target="modal-confirmacion" data-modal-toggle="modal-confirmacion" class="hidden"></button>
+<!-- Botón oculto para abrir modal de éxito -->
+<button id="abrir-modal-exito" type="button" data-modal-target="modal-exito" data-modal-toggle="modal-exito" class="hidden"></button>
+
+<!-- SCRIPTS -->
+<script>
+  // Menú móvil
+  document.getElementById('menu-btn').addEventListener('click', function () {
+    document.getElementById('mobile-menu').classList.toggle('hidden');
+  });
+</script>
+<script type="module" src="/js/file01.js"></script>
+<script src="https://unpkg.com/flowbite@2.3.0/dist/flowbite.min.js"></script>
+<script src="/js/flowbite-modal.js"></script>
 </body>
 </html>
