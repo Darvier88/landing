@@ -17,36 +17,27 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 
-// ✅ Función para guardar votos
-export const saveVote = async (productID) => {
+// guardar datos del formulario de contacto
+export const saveContact = async (nombre, motivo, mensaje) => {
   try {
-    const votesRef = ref(db, "votes");
-    const newVoteRef = push(votesRef);
+    console.log("Guardando contacto en Firebase:", { nombre, motivo, mensaje }); // 👈
 
-    await set(newVoteRef, {
-      productID: productID,
-      date: new Date().toISOString()
+    const contactosRef = ref(db, "contactos");
+    const newContactRef = push(contactosRef);
+
+    await set(newContactRef, {
+      nombre,
+      motivo,
+      mensaje,
+      fecha: new Date().toISOString()
     });
 
-    return { success: true, message: "Voto registrado correctamente." };
+    return { success: true, message: "Mensaje enviado correctamente." };
   } catch (error) {
-    return { success: false, message: `Error al guardar el voto: ${error.message}` };
+    return { success: false, message: `Error al enviar el mensaje: ${error.message}` };
   }
 };
 
-// ✅ Nueva función: obtener votos
-export const getVotes = async () => {
-  try {
-    const dbRef = ref(db);
-    const snapshot = await get(child(dbRef, "votes"));
 
-    if (snapshot.exists()) {
-      return { success: true, data: snapshot.val() };
-    } else {
-      return { success: false, message: "No hay votos registrados." };
-    }
-  } catch (error) {
-    return { success: false, message: `Error al obtener votos: ${error.message}` };
-  }
-};
+
 
