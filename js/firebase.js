@@ -17,27 +17,37 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 
-// guardar datos del formulario de contacto
+// Guarda contacto en la colección 'respuestas'
 export const saveContact = async (nombre, motivo, mensaje) => {
   try {
-    console.log("Guardando contacto en Firebase:", { nombre, motivo, mensaje }); // 👈
+    const respuestasRef = ref(db, "respuestas");
+    const nuevaRespuestaRef = push(respuestasRef);
 
-    const contactosRef = ref(db, "contactos");
-    const newContactRef = push(contactosRef);
-
-    await set(newContactRef, {
+    await set(nuevaRespuestaRef, {
       nombre,
       motivo,
       mensaje,
       fecha: new Date().toISOString()
     });
 
-    return { success: true, message: "Mensaje enviado correctamente." };
+    return { success: true, message: "Datos guardados correctamente." };
   } catch (error) {
-    return { success: false, message: `Error al enviar el mensaje: ${error.message}` };
+    return { success: false, message: `Error al guardar los datos: ${error.message}` };
   }
 };
 
+// Obtener contactos desde la colección 'respuestas'
+export const getContact = async () => {
+  try {
+    const dbRef = ref(db);
+    const snapshot = await get(child(dbRef, "respuestas"));
 
-
-
+    if (snapshot.exists()) {
+      return { success: true, data: snapshot.val() };
+    } else {
+      return { success: false, message: "No se encontraron datos." };
+    }
+  } catch (error) {
+    return { success: false, message: `Error al obtener los datos: ${error.message}` };
+  }
+};
