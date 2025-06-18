@@ -30,7 +30,7 @@
         <a href="#productos" class="hover:text-amber-800 text-yellow-900 transition-colors duration-200 font-heading">Productos</a>
         <a href="#precios" class="hover:text-amber-800 text-yellow-900 transition-colors duration-200 font-heading">Precios</a>
         <a href="#contacto" class="hover:text-amber-800 text-yellow-900 transition-colors duration-200 font-heading">Contacto</a>
-        <a href="#interaccion" class="hover:text-amber-800 text-yellow-900 transition-colors duration-200 font-heading">Interacción</a>
+        <a href="#interaccion" class="hover:text-amber-800 text-yellow-900 transition-colors duration-200 font-heading">Contactos almacenados</a>
       </nav>
       <button id="menu-btn" class="md:hidden focus:outline-none">
         <svg class="w-6 h-6 text-yellow-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -43,6 +43,7 @@
       <a href="#productos" class="block py-2 border-b text-yellow-900 font-heading">Productos</a>
       <a href="#precios" class="block py-2 border-b text-yellow-900 font-heading">Precios</a>
       <a href="#contacto" class="block py-2 border-b text-yellow-900 font-heading">Contacto</a>
+      <a href="#interaccion" class="block py-2 border-b text-yellow-900 font-heading">Interacción</a>
     </nav>
   </header>
 
@@ -65,7 +66,7 @@
   </section>
 
   <!-- SECCIÓN 2: PRODUCTOS -->
-  <section id="productos" class="container mx-auto py-16 px-4">
+  <section id="productos" class="bg-yellow-200 py-16 px-4">
     <h3 class="font-heading text-3xl text-center mb-10 tracking-wide">Nuestros Productos</h3>
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
       <div class="border border-yellow-300 bg-white p-6 rounded-xl text-center shadow-md hover:shadow-xl transform hover:-translate-y-2 hover:scale-105 transition-all duration-200">
@@ -115,7 +116,7 @@
   </section>
 
   <!-- SECCIÓN 3: PRECIOS -->
-  <section id="precios" class="bg-yellow-200 py-16 px-4">
+  <section id="precios" class="container mx-auto py-16 px-4">
     <div class="container mx-auto">
       <h3 class="font-heading text-3xl text-center mb-10 tracking-wide">Precios Referenciales</h3>
       <div class="max-w-3xl mx-auto overflow-x-auto">
@@ -185,13 +186,13 @@
             </tr>
           </tbody>
         </table>
-        <p class="text-center text-sm mt-4 text-yellow-800">*Precios sujetos a cambios. Confirma vía WhatsApp.</p>
+        <p class="text-center text-sm mt-4 text-yellow-800">*Precios sujetos a cambios.</p>
       </div>
     </div>
   </section>
 
   <!-- SECCIÓN 4: FORMULARIO DE CONTACTO/SUSCRIPCIÓN -->
-  <section id="contacto" class="container mx-auto py-20 px-4">
+  <section id="contacto" class="bg-yellow-200 py-16 px-4">
     <h3 class="font-heading text-3xl text-center mb-10 tracking-wide">Contáctanos</h3>
     <form id="formulario-contacto" class="max-w-xl mx-auto bg-white rounded-xl shadow-lg p-8 space-y-6">
       <div>
@@ -219,55 +220,19 @@
         Enviar
       </button>
     </form>
-    
-    <!-- SECCIÓN 5: TABLA DE RESPUESTAS DEL FORMULARIO DE CONTACTO/SUSCRIPCIÓN -->
-   
+  </section>
+
+  
+  <!-- SECCIÓN 5: TABLA DE INTERACCIÓN CON FORMULARIO DE CONTACTO/SUSCRIPCIÓN -->
+  <section id="interaccion" class="container mx-auto py-20 px-4">
+    <h3 class="font-heading text-3xl text-center mb-10 tracking-wide">Contactos almacenados</h3>
     <div id="results" class="max-w-xl mx-auto mt-10">
       <!-- Aquí se insertará la tabla de motivos -->
     </div>
 
   </section>
 
-  <!-- API de Faker -->
-  <section class="bg-slate-50 dark:bg-gray-900">
-    <div class="max-w-4xl pt-8 pb-3 mx-auto">
-        <div id="skeleton-container" class="grid grid-cols-1 md:grid-cols-3 gap-6 p-6">
-
-            <!-- Skeleton Card -->
-            <div class="animate-pulse space-y-4 bg-white dark:bg-gray-800 p-4 rounded-2xl shadow">
-            <div class="w-full h-40 bg-gray-300 dark:bg-gray-700 rounded-lg"></div>
-            <div class="h-6 bg-gray-300 dark:bg-gray-700 rounded w-3/4"></div>
-            <div class="h-5 bg-gray-300 dark:bg-gray-700 rounded w-1/2"></div>
-            <div class="space-y-2">
-                <div class="h-3 bg-gray-300 dark:bg-gray-700 rounded w-full"></div>
-                <div class="h-3 bg-gray-300 dark:bg-gray-700 rounded w-5/6"></div>
-            </div>
-            </div>
-
-            <!-- Skeleton Card -->
-            <div class="animate-pulse space-y-4 bg-white dark:bg-gray-800 p-4 rounded-2xl shadow">
-            <div class="w-full h-40 bg-gray-300 dark:bg-gray-700 rounded-lg"></div>
-            <div class="h-6 bg-gray-300 dark:bg-gray-700 rounded w-3/4"></div>
-            <div class="h-5 bg-gray-300 dark:bg-gray-700 rounded w-1/2"></div>
-            <div class="space-y-2">
-                <div class="h-3 bg-gray-300 dark:bg-gray-700 rounded w-full"></div>
-                <div class="h-3 bg-gray-300 dark:bg-gray-700 rounded w-5/6"></div>
-            </div>
-            </div>
-
-            <!-- Skeleton Card -->
-            <div class="animate-pulse space-y-4 bg-white dark:bg-gray-800 p-4 rounded-2xl shadow">
-            <div class="w-full h-40 bg-gray-300 dark:bg-gray-700 rounded-lg"></div>
-            <div class="h-6 bg-gray-300 dark:bg-gray-700 rounded w-3/4"></div>
-            <div class="h-5 bg-gray-300 dark:bg-gray-700 rounded w-1/2"></div>
-            <div class="space-y-2">
-                <div class="h-3 bg-gray-300 dark:bg-gray-700 rounded w-full"></div>
-                <div class="h-3 bg-gray-300 dark:bg-gray-700 rounded w-5/6"></div>
-            </div>
-            </div>
-
-  </section>
-
+  
   <!-- FOOTER -->
   <footer class="bg-yellow-900 text-white text-center py-6">
     <p class="text-sm font-heading">&copy; 2025 Aserrio Pacheco</p>
