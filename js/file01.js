@@ -3,70 +3,99 @@
 import { fetchFakerData } from './functions.js';
 import { saveContact, getContact } from './firebase.js';
 
-// Cargar datos desde Faker API
+// Elementos del DOM
+const formularioContacto = document.getElementById('formulario-contacto');
+const tablaContactos = document.getElementById('tabla-contactos');
+const btnModalExito = document.getElementById('abrir-modal-exito');
+
+// Generar datos de ejemplo
 const loadData = async () => {
-  const url = 'https://fakerapi.it/api/v2/texts?_quantity=10&_characters=120';
-
-  try {
-    const result = await fetchFakerData(url);
-    if (result.success) {
-      console.log('Datos obtenidos con éxito:', result.body);
-    } else {
-      console.error('Error al obtener los datos:', result.error);
+  const ejemplos = {
+    "-N1": {
+      nombre: "Juan Pérez",
+      motivo: "cotizacion",
+      mensaje: "Necesito precios para tablas de encofrado",
+      telefono: "099 234 5678",
+      fecha: "2025-06-18T10:30:00.000Z"
+    },
+    "-N2": {
+      nombre: "María López",
+      motivo: "pedido",
+      mensaje: "Requiero 100 tablones SD para un proyecto",
+      telefono: "098 765 4321",
+      fecha: "2025-06-19T09:15:00.000Z"
+    },
+    "-N3": {
+      nombre: "Carlos González",
+      motivo: "consulta",
+      mensaje: "¿Tienen disponibilidad de vigas de 6 metros?",
+      telefono: "097 123 4567",
+      fecha: "2025-06-19T11:45:00.000Z"
+    },
+    "-N4": {
+      nombre: "Ana Martínez",
+      motivo: "cotizacion",
+      mensaje: "Precio por mayor para cuartones D 5x5",
+      telefono: "096 987 6543",
+      fecha: "2025-06-19T14:20:00.000Z"
+    },
+    "-N5": {
+      nombre: "Roberto Silva",
+      motivo: "pedido",
+      mensaje: "Necesito tablas duras para un proyecto urgente",
+      telefono: "095 345 6789",
+      fecha: "2025-06-19T15:30:00.000Z"
     }
-  } catch (error) {
-    console.error('Ocurrió un error inesperado:', error);
-  }
+  };
+
+  return {
+    success: true,
+    data: ejemplos
+  };
 };
 
-// Mostrar tabla de motivos guardados
+// Mostrar tabla de contactos
 const displayContact = async () => {
-  const container = document.getElementById("results");
-  if (!container) return;
-
-  const result = await getContact();
-
-  if (!result.success) {
-    container.innerHTML = `<p class="text-red-500">${result.message}</p>`;
-    return;
+  // Primero intentamos obtener datos reales de Firebase
+  const resultado = await getContact();
+    
+  if (resultado.success && resultado.data) {
+      mostrarContactos(resultado.data);
+  } else {
+      // Si no hay datos reales, usamos datos de ejemplo
+      const datosEjemplo = await loadData();
+      if (datosEjemplo.success) {
+          mostrarContactos(datosEjemplo.data);
+      }
   }
-
-  const data = result.data;
-  const entries = Object.values(data);
-
-  if (entries.length === 0) {
-    container.innerHTML = `<p class="text-gray-500">No hay contactos registrados.</p>`;
-    return;
-  }
-
-  // Crear tabla
-  const table = document.createElement("table");
-    table.className = "w-full border-b-2 border-yellow-950 rounded-lg overflow-hidden bg-white";
-
-    table.innerHTML = `
-    <thead>
-        <tr>
-        <th class="py-2 px-4 text-left font-bold text-amber-900 border border--400">Persona</th>
-        <th class="py-2 px-4 text-left font-bold text-amber-900 border border-orange-400">Motivo</th>
-        </tr>
-    </thead>
-    <tbody>
-      ${entries.map((item, index) => `
-        <tr>
-          <td class="py-2 px-4 border border-orange-400 text-amber-900">Persona ${index + 1}</td>
-          <td class="py-2 px-4 capitalize border border-orange-400 text-amber-900"">${item.motivo}</td>
-        </tr>
-      `).join('')}
-    </tbody>
-  `;
-
-  container.innerHTML = ""; // limpiar
-  container.appendChild(table);
 };
+
+// Función para mostrar los contactos en la tabla (sin paginación)
+function mostrarContactos(datos) {
+    const tbody = document.getElementById('tabla-contactos');
+    if (!tbody) return;
+    tbody.innerHTML = '';
+    Object.keys(datos).forEach((key, index) => {
+        const contacto = datos[key];
+        const fila = document.createElement('tr');
+        fila.className = 'hover:bg-yellow-50 transition-colors group border-b border-yellow-100';
+        fila.innerHTML = `
+            <td class="py-4 px-6">
+                <div class="flex items-center gap-4">
+                    <div class="w-2 h-2 rounded-full bg-amber-500"></div>
+                    <span class="font-heading text-yellow-900 group-hover:text-amber-600 transition-colors">Persona ${index + 1}</span>
+                </div>
+            </td>
+            <td class="py-4 px-6 font-heading text-yellow-900 group-hover:text-amber-600 transition-colors capitalize">${contacto.motivo}</td>
+        `;
+        tbody.appendChild(fila);
+    });
+}
 
 // Manejar el formulario de contacto
 const enableForm = () => {
   const form = document.getElementById('formulario-contacto');
+  const btnModalExito = document.getElementById('abrir-modal-exito');
 
   if (!form) {
     console.warn("No se encontró el formulario con id 'formulario-contacto'.");
@@ -76,28 +105,53 @@ const enableForm = () => {
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
 
-    const nombre = form.nombre.value.trim();
-    const motivo = form.motivo.value.trim();
-    const mensaje = form.mensaje.value.trim();
+    const formData = new FormData(form);
+    const contactoData = {
+        nombre: formData.get('nombre'),
+        motivo: formData.get('motivo'),
+        mensaje: formData.get('mensaje'),
+        telefono: formData.get('telefono') || 'No proporcionado'
+    };
 
-    if (!nombre || !motivo || !mensaje) {
-      alert("Por favor completa todos los campos.");
-      return;
+    if (!contactoData.nombre || !contactoData.motivo || !contactoData.mensaje || !contactoData.telefono) {
+        alert("Por favor completa todos los campos requeridos, incluyendo el teléfono.");
+        return;
     }
 
-    const result = await saveContact(nombre, motivo, mensaje);
+    // Validar formato del teléfono
+    const phonePattern ="[0-9]{3}[\s-]?[0-9]{3}[\s-]?[0-9]{4}";
+    if (!phonePattern.test(contactoData.telefono)) {
+        alert("Por favor ingresa un número de teléfono válido (Ej: 099 999 9999)");
+        return;
+    }
 
-    if (result.success) {
-      alert("Mensaje enviado correctamente.");
-      form.reset();
-      await displayContact(); // 🔁 mostrar tabla actualizada
+    const resultado = await saveContact(
+        contactoData.nombre,
+        contactoData.motivo,
+        contactoData.mensaje,
+        contactoData.telefono
+    );
+
+    if (resultado.success) {
+        // Mostrar modal de éxito
+        btnModalExito.click();
+        
+        // Limpiar formulario
+        form.reset();
+        
+        // Recargar contactos
+        await displayContact();
     } else {
-      alert("Error al enviar el mensaje: " + result.message);
+        alert('Error al enviar el mensaje: ' + resultado.message);
     }
   });
 };
 
-// Autoejecución
+// Inicializar todo
+document.addEventListener('DOMContentLoaded', () => {
+    enableForm();
+    displayContact();
+});
 (() => {
   loadData();
   enableForm();

@@ -22,229 +22,690 @@
 <body class="font-sans text-yellow-900 bg-yellow-100">
 
   <!-- NAV -->
-  <header class="bg-yellow-200 shadow sticky top-0 z-50 transition-all duration-300">
-    <div class="container mx-auto flex justify-between items-center py-6 px-4">
-      <h1 class="font-heading text-2xl text-yellow-900 tracking-wide">Aserrio Pacheco</h1>
-      <nav class="hidden md:flex space-x-6">
-        <a href="#quienes" class="hover:text-amber-800 text-yellow-900 transition-colors duration-200 font-heading">Quiénes somos</a>
-        <a href="#productos" class="hover:text-amber-800 text-yellow-900 transition-colors duration-200 font-heading">Productos</a>
-        <a href="#precios" class="hover:text-amber-800 text-yellow-900 transition-colors duration-200 font-heading">Precios</a>
-        <a href="#contacto" class="hover:text-amber-800 text-yellow-900 transition-colors duration-200 font-heading">Contacto</a>
-        <a href="#interaccion" class="hover:text-amber-800 text-yellow-900 transition-colors duration-200 font-heading">Contactos almacenados</a>
+  <header class="bg-white/90 backdrop-blur-md shadow-lg sticky top-0 z-50 transition-all duration-300">
+    <div class="container mx-auto flex justify-between items-center py-4 px-4">
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-16 h-16 bg-gradient-to-br from-amber-600 to-yellow-500 rounded-xl overflow-hidden shadow-lg group-hover:shadow-amber-200/50 transition-all duration-300">
+          <img src="public/assets/logo.jpg" alt="AP" class="w-full h-full object-cover">
+        </div>
+        <div>
+          <h1 class="font-heading text-2xl text-yellow-900 tracking-wide group-hover:text-amber-600 transition-colors">Aserrio Pacheco</h1>
+          <span class="text-xs text-amber-600 font-medium tracking-wider">CALIDAD EN MADERAS</span>
+        </div>
+      </a>
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="#quienes" class="relative font-heading text-yellow-900 hover:text-amber-600 transition-colors after:absolute after:left-0 after:-bottom-2 after:h-0.5 after:w-0 after:bg-amber-600 after:transition-all hover:after:w-full">Quiénes somos</a>
+        <a href="#productos" class="relative font-heading text-yellow-900 hover:text-amber-600 transition-colors after:absolute after:left-0 after:-bottom-2 after:h-0.5 after:w-0 after:bg-amber-600 after:transition-all hover:after:w-full">Productos</a>
+        <a href="#precios" class="relative font-heading text-yellow-900 hover:text-amber-600 transition-colors after:absolute after:left-0 after:-bottom-2 after:h-0.5 after:w-0 after:bg-amber-600 after:transition-all hover:after:w-full">Precios</a>
+        <a href="#interaccion" class="relative font-heading text-yellow-900 hover:text-amber-600 transition-colors after:absolute after:left-0 after:-bottom-2 after:h-0.5 after:w-0 after:bg-amber-600 after:transition-all hover:after:w-full">Contactos almacenados</a>
+        <a href="#contacto" class="px-6 py-2.5 bg-gradient-to-r from-amber-600 to-yellow-500 text-yellow-900 font-heading rounded-lg shadow-lg hover:shadow-amber-200/50 transition-all hover:-translate-y-0.5">Contacto</a>
       </nav>
-      <button id="menu-btn" class="md:hidden focus:outline-none">
+      <button id="menu-btn" class="md:hidden w-12 h-12 flex items-center justify-center rounded-xl bg-yellow-50 hover:bg-yellow-100 transition-colors focus:outline-none">
         <svg class="w-6 h-6 text-yellow-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" />
         </svg>
       </button>
     </div>
-    <nav id="mobile-menu" class="hidden md:hidden bg-yellow-100 px-4 pb-4">
-      <a href="#quienes" class="block py-2 border-b text-yellow-900 font-heading">Quiénes somos</a>
-      <a href="#productos" class="block py-2 border-b text-yellow-900 font-heading">Productos</a>
-      <a href="#precios" class="block py-2 border-b text-yellow-900 font-heading">Precios</a>
-      <a href="#contacto" class="block py-2 border-b text-yellow-900 font-heading">Contacto</a>
-      <a href="#interaccion" class="block py-2 border-b text-yellow-900 font-heading">Interacción</a>
-    </nav>
+    <!-- Menú móvil mejorado -->
+<nav id="mobile-menu" class="hidden md:hidden">
+  <div class="px-4 py-6 bg-white backdrop-blur-md border-t border-yellow-100">
+    <div class="flex flex-col space-y-4">
+      <a href="#quienes" class="flex items-center gap-3 p-3 rounded-xl hover:bg-yellow-50 transition-colors">
+        <svg class="w-5 h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+        </svg>
+        <span class="font-heading text-yellow-900">Quiénes somos</span>
+      </a>
+      <a href="#productos" class="flex items-center gap-3 p-3 rounded-xl hover:bg-yellow-50 transition-colors">
+        <svg class="w-5 h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+        </svg>
+        <span class="font-heading text-yellow-900">Productos</span>
+      </a>
+      <a href="#precios" class="flex items-center gap-3 p-3 rounded-xl hover:bg-yellow-50 transition-colors">
+        <svg class="w-5 h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+        <span class="font-heading text-yellow-900">Precios</span>
+      </a>
+      <a href="#interaccion" class="flex items-center gap-3 p-3 rounded-xl hover:bg-yellow-50 transition-colors">
+        <svg class="w-5 h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+        <span class="font-heading text-yellow-900">Contactos almacenados</span>
+      </a>
+      <a href="#contacto" class="flex items-center gap-3 p-3 bg-gradient-to-r from-amber-600 to-yellow-500 rounded-xl shadow-lg">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+        </svg>
+        <span class="font-heading">Contacto</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
   </header>
 
   <!-- SECCIÓN 1: QUIÉNES SOMOS -->
-  <section id="quienes" class="container mx-auto py-16 px-4">
-    <div class="flex flex-col md:flex-row items-center gap-8">
-      <img src="public/assets/aserradero.jpg" alt="Aserradero" class="w-full md:w-1/2 rounded-xl shadow-lg object-cover h-64 mb-6 md:mb-0">
-      <div>
-        <h2 class="font-display text-4xl mb-4 text-yellow-900">Quiénes somos</h2>
-        <p class="text-lg text-yellow-800 mb-4">
-          Somos un aserradero familiar con más de 5 años de experiencia, comprometidos con la calidad y la atención personalizada. Trabajamos con maderas seleccionadas y procesos responsables.
-        </p>
-        <ul class="list-disc list-inside text-yellow-900 space-y-1">
-          <li>Atención personalizada y asesoría especializada</li>
-          <li>Ofrecemos materiales de la más alta calidad al mejor precio.</li>
-          <li>Te ayudamos a conseguir un fletero confiable para tu pedido.</li>
-        </ul>
+  <section id="quienes" class="relative bg-gradient-to-b from-yellow-50 via-yellow-100 to-yellow-200 py-32 overflow-hidden">
+    <!-- Elementos decorativos de fondo -->
+    <div class="absolute inset-0">
+      <div class="absolute top-0 right-0 w-96 h-96 bg-amber-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+      <div class="absolute bottom-0 left-0 w-96 h-96 bg-yellow-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+      <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-amber-100 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-4000"></div>
+      <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9IiNGREUwNjgiIG9wYWNpdHk9IjAuMSIvPjwvc3ZnPg==')] opacity-30"></div>
+    </div>
+
+    <div class="container mx-auto px-4 relative">
+      <div class="flex flex-col md:flex-row items-center gap-16 relative">
+        <!-- Columna de contenido -->
+        <div class="md:w-1/2 space-y-8">
+          <div class="space-y-4">
+            <div class="flex flex-wrap items-center gap-4">
+              <span class="flex items-center gap-2 bg-amber-100 text-amber-800 px-4 py-2 rounded-full text-sm font-semibold tracking-wide">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                Más de 5 años de experiencia
+              </span>
+              <span class="flex items-center gap-2 bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-semibold">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                100% Confiable
+              </span>
+            </div>
+            <h2 class="font-display text-5xl md:text-6xl lg:text-7xl text-yellow-900 leading-tight">
+              Maderas de calidad para tus <span class="text-amber-600">proyectos</span>
+            </h2>
+            <p class="text-xl text-yellow-800 leading-relaxed max-w-2xl">
+              Somos un <span class="font-semibold text-amber-700">aserradero familiar</span> comprometido con la excelencia. Trabajamos con las mejores maderas seleccionadas y procesos responsables para garantizar tu satisfacción.
+            </p>
+          </div>
+
+          <!-- Características principales -->
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="group bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+              <div class="mb-4 w-14 h-14 rounded-xl bg-yellow-100 flex items-center justify-center shadow-lg group-hover:shadow-amber-200/50 transition-all">
+                <svg class="w-7 h-7 text-amber-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                </svg>
+              </div>
+              <h3 class="font-heading text-xl mb-2 text-yellow-900 group-hover:text-amber-600 transition-colors">Atención Personalizada</h3>
+              <p class="text-yellow-800">Asesoría especializada y dedicada para cada uno de tus proyectos</p>
+            </div>
+            <div class="group bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+              <div class="mb-4 w-14 h-14 rounded-xl bg-yellow-100 flex items-center justify-center shadow-lg group-hover:shadow-amber-200/50 transition-all">
+                <svg class="w-7 h-7 text-amber-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+              </div>
+              <h3 class="font-heading text-xl mb-2 text-yellow-900 group-hover:text-amber-600 transition-colors">Servicio Completo</h3>
+              <p class="text-yellow-800">Facilitamos el transporte de tu pedido con fleteros confiables</p>
+            </div>
+          </div>
+
+          <!-- CTA -->
+          <div class="flex items-center gap-6 pt-4">
+            <a href="#productos" class="group inline-flex items-center gap-3 bg-gradient-to-r from-amber-600 to-yellow-500 text-yellow-900 px-8 py-4 rounded-xl shadow-lg hover:shadow-amber-200/50 transform hover:-translate-y-1 transition-all text-lg font-heading">
+              Ver nuestros productos
+              <svg class="w-6 h-6 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </a>
+            <a href="#contacto" class="inline-flex items-center gap-2 text-amber-700 hover:text-amber-600 transition-colors font-heading">
+              <span>Contáctanos</span>
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Columna de imagen -->
+        <div class="md:w-1/2 relative">
+          <div class="relative">
+            <!-- Decoración de fondo -->
+            <div class="absolute inset-0 bg-gradient-to-br from-amber-200/30 to-yellow-200/30 rounded-[2.5rem] blur-3xl transform rotate-6"></div>
+            <div class="absolute inset-0 bg-gradient-to-tr from-yellow-200/30 to-amber-200/30 rounded-[2.5rem] blur-3xl transform -rotate-6"></div>
+            
+            <!-- Contenedor de imagen con máscara -->
+            <div class="relative bg-gradient-to-br from-amber-500 to-yellow-500 p-1 rounded-[2rem] shadow-2xl">
+              <img src="public/assets/aserradero.jpg" alt="Aserradero Pacheco" 
+                class="rounded-[1.9rem] w-full aspect-[4/3] object-cover"
+              >
+            </div>
+
+            <!-- Elementos decorativos -->
+            <div class="absolute -bottom-6 -right-6 w-24 h-24 bg-gradient-to-br from-amber-500 to-yellow-500 rounded-2xl shadow-lg transform rotate-12"></div>
+            <div class="absolute -top-6 -left-6 w-20 h-20 bg-white rounded-2xl shadow-lg transform -rotate-12 flex items-center justify-center">
+              <svg class="w-10 h-10 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- SECCIÓN 2: PRODUCTOS -->
-  <section id="productos" class="bg-yellow-200 py-16 px-4">
-    <h3 class="font-heading text-3xl text-center mb-10 tracking-wide">Nuestros Productos</h3>
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div class="border border-yellow-300 bg-white p-6 rounded-xl text-center shadow-md hover:shadow-xl transform hover:-translate-y-2 hover:scale-105 transition-all duration-200">
-        <img src="public/assets/tablas.jpg" alt="Tablas de madera" class="w-full h-48 object-cover mb-4 rounded-lg transition-transform duration-200 hover:scale-105">
-        <h4 class="font-heading text-xl mb-2 text-yellow-900">Tablas de madera</h4>
-        <ul class="text-yellow-800 text-sm">
-          <li>Encofrado, SD, Dura, Laurel</li>
-        </ul>
+  <section id="productos" class="bg-gradient-to-b from-yellow-100 to-yellow-200 py-24 px-4">
+    <div class="container mx-auto">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="inline-block bg-amber-100 text-amber-800 px-6 py-3 rounded-full text-lg font-semibold tracking-wide mb-6">Catálogo de Productos</span>
+        <h3 class="font-display text-5xl md:text-6xl mb-8 text-yellow-900 leading-tight">Nuestros Productos de <span class="text-amber-600">Alta Calidad</span></h3>
+        <p class="text-xl text-yellow-800">Descubre nuestra amplia gama de productos de madera, seleccionados cuidadosamente para tus proyectos.</p>
       </div>
-      <div class="border border-yellow-300 bg-white p-6 rounded-xl text-center shadow-md hover:shadow-xl transform hover:-translate-y-2 hover:scale-105 transition-all duration-200">
-        <img src="public/assets/tablones.jpg" alt="Tablones de madera" class="w-full h-48 object-cover mb-4 rounded-lg transition-transform duration-200 hover:scale-105">
-        <h4 class="font-heading text-xl mb-2 text-yellow-900">Tablones de madera</h4>
-        <ul class="text-yellow-800 text-sm">
-          <li>SD y Duro</li>
-        </ul>
-      </div>
-      <div class="border border-yellow-300 bg-white p-6 rounded-xl text-center shadow-md hover:shadow-xl transform hover:-translate-y-2 hover:scale-105 transition-all duration-200">
-        <img src="public/assets/caña_redonda.jpg" alt="Cañas redondas" class="w-full h-48 object-cover mb-4 rounded-lg transition-transform duration-200 hover:scale-105">
-        <h4 class="font-heading text-xl mb-2 text-yellow-900">Cañas redondas</h4>
-        <ul class="text-yellow-800 text-sm">
-          <li>Redondas, latilladas, cortadas</li>
-        </ul>
-      </div>
-      <div class="border border-yellow-300 bg-white p-6 rounded-xl text-center shadow-md hover:shadow-xl transform hover:-translate-y-2 hover:scale-105 transition-all duration-200 flex flex-col justify-center">
-        <img src="public/assets/caña_picada.jpg" alt="Cañas Picadas" class="w-full h-48 object-cover mb-4 rounded-lg transition-transform duration-200 hover:scale-105">
-        <h4 class="font-heading text-xl mb-2 text-yellow-900">Cañas Picadas</h4>
-        <ul class="text-yellow-800 text-sm">
-          <li>Enteras, cortadas</li>
-        </ul>
-      </div>
-      <div class="border border-yellow-300 bg-white p-6 rounded-xl text-center shadow-md hover:shadow-xl transform hover:-translate-y-2 hover:scale-105 transition-all duration-200">
-        <img src="public/assets/vigas.jpg" alt="Vigas" class="w-full h-48 object-cover mb-4 rounded-lg transition-transform duration-200 hover:scale-105">
-        <h4 class="font-heading text-xl mb-2 text-yellow-900">Vigas</h4>
-        <ul class="text-yellow-800 text-sm">
-          <li>Para techos y estructuras</li>
-        </ul>
-      </div>
-      <div class="border border-yellow-300 bg-white p-6 rounded-xl text-center shadow-md hover:shadow-xl transform hover:-translate-y-2 hover:scale-105 transition-all duration-200">
-        <img src="public/assets/cuartones.jpg" alt="Cuartones" class="w-full h-48 object-cover mb-4 rounded-lg transition-transform duration-200 hover:scale-105">
-        <h4 class="font-heading text-xl mb-2 text-yellow-900">Cuartones</h4>
-        <ul class="text-yellow-800 text-sm">
-          <li>SD y Duro, 5x5 y 4x5 cm</li>
-        </ul>
-      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Tablas de madera -->
+        <div class="group bg-white/90 backdrop-blur-sm rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
+          <div class="relative overflow-hidden">
+            <img src="public/assets/tablas.jpg" alt="Tablas de madera" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+          </div>
+          <div class="p-8">
+            <div class="flex items-center justify-between mb-4">
+              <h4 class="font-heading text-2xl text-yellow-900">Tablas de madera</h4>
+              <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">En stock</span>
+            </div>
+            <ul class="space-y-3 text-yellow-800">
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>Encofrado</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>SD y Dura</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>Laurel</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Tablones de madera -->
+        <div class="group bg-white/90 backdrop-blur-sm rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
+          <div class="relative overflow-hidden">
+            <img src="public/assets/tablones.jpg" alt="Tablones de madera" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+          </div>
+          <div class="p-8">
+            <div class="flex items-center justify-between mb-4">
+              <h4 class="font-heading text-2xl text-yellow-900">Tablones</h4>
+              <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">En stock</span>
+            </div>
+            <ul class="space-y-3 text-yellow-800">
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>SD y Duro</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>Alta resistencia</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Cañas redondas -->
+        <div class="group bg-white/90 backdrop-blur-sm rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
+          <div class="relative overflow-hidden">
+            <img src="public/assets/caña_redonda.jpg" alt="Cañas redondas" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+          </div>
+          <div class="p-8">
+            <div class="flex items-center justify-between mb-4">
+              <h4 class="font-heading text-2xl text-yellow-900">Cañas redondas</h4>
+              <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">En stock</span>
+            </div>
+            <ul class="space-y-3 text-yellow-800">
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>Redondas</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>Latilladas</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>Cortadas a medida</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Cañas Picadas -->
+        <div class="group bg-white/90 backdrop-blur-sm rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
+          <div class="relative overflow-hidden">
+            <img src="public/assets/caña_picada.jpg" alt="Cañas Picadas" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+          </div>
+          <div class="p-8">
+            <div class="flex items-center justify-between mb-4">
+              <h4 class="font-heading text-2xl text-yellow-900">Cañas Picadas</h4>
+              <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">En stock</span>
+            </div>
+            <ul class="space-y-3 text-yellow-800">
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>Enteras</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>Cortadas a medida</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Vigas -->
+        <div class="group bg-white/90 backdrop-blur-sm rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
+          <div class="relative overflow-hidden">
+            <img src="public/assets/vigas.jpg" alt="Vigas" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+          </div>
+          <div class="p-8">
+            <div class="flex items-center justify-between mb-4">
+              <h4 class="font-heading text-2xl text-yellow-900">Vigas</h4>
+              <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">En stock</span>
+            </div>
+            <ul class="space-y-3 text-yellow-800">
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>Para techos</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>Para estructuras</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Cuartones -->
+        <div class="group bg-white/90 backdrop-blur-sm rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
+          <div class="relative overflow-hidden">
+            <img src="public/assets/cuartones.jpg" alt="Cuartones" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+          </div>
+          <div class="p-8">
+            <div class="flex items-center justify-between mb-4">
+              <h4 class="font-heading text-2xl text-yellow-900">Cuartones</h4>
+              <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">En stock</span>
+            </div>
+            <ul class="space-y-3 text-yellow-800">
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>SD y Duro</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>5x5 y 4x5 cm</span>
+              </li>
+            </ul>
+          </div>
+        </div>
       
     </div>
   </section>
 
   <!-- SECCIÓN 3: PRECIOS -->
-  <section id="precios" class="container mx-auto py-16 px-4">
-    <div class="container mx-auto">
-      <h3 class="font-heading text-3xl text-center mb-10 tracking-wide">Precios Referenciales</h3>
-      <div class="max-w-3xl mx-auto overflow-x-auto">
-        <table class="min-w-[350px] w-full mx-auto bg-white shadow-lg rounded-xl overflow-hidden">
-          <thead class="bg-amber-700">
-            <tr>
-              <th class="p-4 text-center text-yellow-900 font-heading text-lg tracking-wide">Producto</th>
-              <th class="p-4 text-center text-yellow-900 font-heading text-lg tracking-wide">Precio (USD)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="even:bg-yellow-50 hover:bg-yellow-100 transition">
-              <td class="p-4 text-center font-heading">Tabla encofrado</td>
-              <td class="p-4 text-center font-heading">$4.50</td>
-            </tr>
-            <tr class="even:bg-yellow-50 hover:bg-yellow-100 transition">
-              <td class="p-4 text-center font-heading">Tabla SD</td>
-              <td class="p-4 text-center font-heading">$6.00</td>
-            </tr>
-            <tr class="even:bg-yellow-50 hover:bg-yellow-100 transition">
-              <td class="p-4 text-center font-heading">Tabla Dura</td>
-              <td class="p-4 text-center font-heading">$12.00</td>
-            </tr>
-            <tr class="even:bg-yellow-50 hover:bg-yellow-100 transition">
-              <td class="p-4 text-center font-heading">Tabla de laurel</td>
-              <td class="p-4 text-center font-heading">$5.50</td>
-            </tr>
-            <tr class="even:bg-yellow-50 hover:bg-yellow-100 transition">
-              <td class="p-4 text-center font-heading">Tablón SD</td>
-              <td class="p-4 text-center font-heading">$8.00</td>
-            </tr>
-            <tr class="even:bg-yellow-50 hover:bg-yellow-100 transition">
-              <td class="p-4 text-center font-heading">Tablón Duro</td>
-              <td class="p-4 text-center font-heading">$12.00</td>
-            </tr>
-            <tr class="even:bg-yellow-50 hover:bg-yellow-100 transition">
-              <td class="p-4 text-center font-heading">Caña redonda</td>
-              <td class="p-4 text-center font-heading">$3.00</td>
-            </tr>
-            <tr class="even:bg-yellow-50 hover:bg-yellow-100 transition">
-              <td class="p-4 text-center font-heading">Caña latillada</td>
-              <td class="p-4 text-center font-heading">$4.00</td>
-            </tr>
-            <tr class="even:bg-yellow-50 hover:bg-yellow-100 transition">
-              <td class="p-4 text-center font-heading">Caña picada</td>
-              <td class="p-4 text-center font-heading">$3.50</td>
-            </tr>
-            <tr class="even:bg-yellow-50 hover:bg-yellow-100 transition">
-              <td class="p-4 text-center font-heading">Viga</td>
-              <td class="p-4 text-center font-heading">$16.00</td>
-            </tr>
-            <tr class="even:bg-yellow-50 hover:bg-yellow-100 transition">
-              <td class="p-4 text-center font-heading">Cuartón SD 5x5 cm</td>
-              <td class="p-4 text-center font-heading">$4.00</td>
-            </tr>
-            <tr class="even:bg-yellow-50 hover:bg-yellow-100 transition">
-              <td class="p-4 text-center font-heading">Cuartón SD 4x5 cm</td>
-              <td class="p-4 text-center font-heading">$3.00</td>
-            </tr>
-            <tr class="even:bg-yellow-50 hover:bg-yellow-100 transition">
-              <td class="p-4 text-center font-heading">Cuartón D 5x5 cm</td>
-              <td class="p-4 text-center font-heading">$8.00</td>
-            </tr>
-            <tr class="even:bg-yellow-50 hover:bg-yellow-100 transition">
-              <td class="p-4 text-center font-heading">Cuartón D 4x5 cm</td>
-              <td class="p-4 text-center font-heading">$6.00</td>
-            </tr>
-          </tbody>
-        </table>
-        <p class="text-center text-sm mt-4 text-yellow-800">*Precios sujetos a cambios.</p>
+  <section id="precios" class="relative py-24 px-4 bg-gradient-to-b from-yellow-200 to-yellow-100 overflow-hidden">
+    <!-- Elementos decorativos de fondo -->
+    <div class="absolute inset-0">
+      <div class="absolute top-0 right-0 w-96 h-96 bg-amber-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+      <div class="absolute bottom-0 left-0 w-96 h-96 bg-yellow-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+      <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-amber-100 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-4000"></div>
+    </div>
+
+    <div class="container mx-auto relative">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="inline-block bg-amber-100 text-amber-800 px-6 py-3 rounded-full text-lg font-semibold tracking-wide mb-6">Lista de Precios</span>
+        <h3 class="font-display text-5xl md:text-6xl mb-8 text-yellow-900 leading-tight">Precios <span class="text-amber-600">Competitivos</span></h3>
+        <p class="text-xl text-yellow-800">Consulta nuestros precios referenciales. Todos los precios están sujetos a disponibilidad y pueden variar.</p>
+      </div>
+
+      <div class="max-w-4xl mx-auto relative">
+        <div class="bg-white/80 backdrop-blur-sm shadow-2xl rounded-2xl overflow-hidden border border-yellow-200">
+          <div class="overflow-x-auto">
+            <table class="w-full">
+              <thead>
+                <tr class="bg-gradient-to-r from-amber-900 via-amber-800 to-yellow-800 shadow-lg">
+                  <th class="py-6 px-6 text-left text-lg font-heading text-amber-100 font-bold tracking-wide">Producto</th>
+                  <th class="py-6 px-6 text-right text-lg font-heading text-amber-100 font-bold tracking-wide">Precio (USD)</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-yellow-100/50">
+                <tr class="hover:bg-gradient-to-r hover:from-yellow-50/80 hover:to-amber-50/80 transition-all duration-300 group">
+                  <td class="py-4 px-6">
+                    <div class="flex items-center gap-4">
+                      <div class="w-2 h-2 rounded-full bg-green-500 group-hover:animate-pulse"></div>
+                      <span class="font-heading text-yellow-900 group-hover:text-amber-700 transition-colors font-medium">Tabla encofrado</span>
+                    </div>
+                  </td>
+                  <td class="py-4 px-6 text-right font-heading text-amber-700 group-hover:text-amber-800 transition-colors font-medium">$4.50</td>
+                </tr>
+                <tr class="hover:bg-yellow-50 transition-colors group">
+                  <td class="py-4 px-6">
+                    <div class="flex items-center gap-4">
+                      <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                      <span class="font-heading text-yellow-900 group-hover:text-amber-600 transition-colors">Tabla SD</span>
+                    </div>
+                  </td>
+                  <td class="py-4 px-6 text-right font-heading text-amber-700">$6.00</td>
+                </tr>
+                <tr class="hover:bg-yellow-50 transition-colors group">
+                  <td class="py-4 px-6">
+                    <div class="flex items-center gap-4">
+                      <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                      <span class="font-heading text-yellow-900 group-hover:text-amber-600 transition-colors">Tabla Dura</span>
+                    </div>
+                  </td>
+                  <td class="py-4 px-6 text-right font-heading text-amber-700">$12.00</td>
+                </tr>
+                <tr class="hover:bg-yellow-50 transition-colors group">
+                  <td class="py-4 px-6">
+                    <div class="flex items-center gap-4">
+                      <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                      <span class="font-heading text-yellow-900 group-hover:text-amber-600 transition-colors">Tabla de laurel</span>
+                    </div>
+                  </td>
+                  <td class="py-4 px-6 text-right font-heading text-amber-700">$5.50</td>
+                </tr>
+                <tr class="hover:bg-yellow-50 transition-colors group">
+                  <td class="py-4 px-6">
+                    <div class="flex items-center gap-4">
+                      <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                      <span class="font-heading text-yellow-900 group-hover:text-amber-600 transition-colors">Tablón SD</span>
+                    </div>
+                  </td>
+                  <td class="py-4 px-6 text-right font-heading text-amber-700">$8.00</td>
+                </tr>
+                <tr class="hover:bg-yellow-50 transition-colors group">
+                  <td class="py-4 px-6">
+                    <div class="flex items-center gap-4">
+                      <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                      <span class="font-heading text-yellow-900 group-hover:text-amber-600 transition-colors">Tablón Duro</span>
+                    </div>
+                  </td>
+                  <td class="py-4 px-6 text-right font-heading text-amber-700">$12.00</td>
+                </tr>
+                <tr class="hover:bg-yellow-50 transition-colors group">
+                  <td class="py-4 px-6">
+                    <div class="flex items-center gap-4">
+                      <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                      <span class="font-heading text-yellow-900 group-hover:text-amber-600 transition-colors">Caña redonda</span>
+                    </div>
+                  </td>
+                  <td class="py-4 px-6 text-right font-heading text-amber-700">$3.00</td>
+                </tr>
+                <tr class="hover:bg-yellow-50 transition-colors group">
+                  <td class="py-4 px-6">
+                    <div class="flex items-center gap-4">
+                      <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                      <span class="font-heading text-yellow-900 group-hover:text-amber-600 transition-colors">Caña latillada</span>
+                    </div>
+                  </td>
+                  <td class="py-4 px-6 text-right font-heading text-amber-700">$4.00</td>
+                </tr>
+                <tr class="hover:bg-yellow-50 transition-colors group">
+                  <td class="py-4 px-6">
+                    <div class="flex items-center gap-4">
+                      <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                      <span class="font-heading text-yellow-900 group-hover:text-amber-600 transition-colors">Caña picada</span>
+                    </div>
+                  </td>
+                  <td class="py-4 px-6 text-right font-heading text-amber-700">$3.50</td>
+                </tr>
+                <tr class="hover:bg-yellow-50 transition-colors group">
+                  <td class="py-4 px-6">
+                    <div class="flex items-center gap-4">
+                      <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                      <span class="font-heading text-yellow-900 group-hover:text-amber-600 transition-colors">Viga</span>
+                    </div>
+                  </td>
+                  <td class="py-4 px-6 text-right font-heading text-amber-700">$16.00</td>
+                </tr>
+                <tr class="hover:bg-yellow-50 transition-colors group">
+                  <td class="py-4 px-6">
+                    <div class="flex items-center gap-4">
+                      <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                      <span class="font-heading text-yellow-900 group-hover:text-amber-600 transition-colors">Cuartón SD 5x5 cm</span>
+                    </div>
+                  </td>
+                  <td class="py-4 px-6 text-right font-heading text-amber-700">$4.00</td>
+                </tr>
+                <tr class="hover:bg-yellow-50 transition-colors group">
+                  <td class="py-4 px-6">
+                    <div class="flex items-center gap-4">
+                      <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                      <span class="font-heading text-yellow-900 group-hover:text-amber-600 transition-colors">Cuartón SD 4x5 cm</span>
+                    </div>
+                  </td>
+                  <td class="py-4 px-6 text-right font-heading text-amber-700">$3.00</td>
+                </tr>
+                <tr class="hover:bg-yellow-50 transition-colors group">
+                  <td class="py-4 px-6">
+                    <div class="flex items-center gap-4">
+                      <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                      <span class="font-heading text-yellow-900 group-hover:text-amber-600 transition-colors">Cuartón D 5x5 cm</span>
+                    </div>
+                  </td>
+                  <td class="py-4 px-6 text-right font-heading text-amber-700">$8.00</td>
+                </tr>
+                <tr class="hover:bg-yellow-50 transition-colors group">
+                  <td class="py-4 px-6">
+                    <div class="flex items-center gap-4">
+                      <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                      <span class="font-heading text-yellow-900 group-hover:text-amber-600 transition-colors">Cuartón D 4x5 cm</span>
+                    </div>
+                  </td>
+                  <td class="py-4 px-6 text-right font-heading text-amber-700">$6.00</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="p-6 bg-gradient-to-b from-yellow-50/80 to-white/80 border-t border-yellow-100">
+            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <div class="flex items-center gap-3">
+                <div class="flex items-center gap-2 bg-green-100 px-3 py-2 rounded-lg">
+                  <div class="w-3 h-3 rounded-full bg-green-500 animate-pulse"></div>
+                  <span class="text-sm font-medium text-green-800">Producto disponible en stock</span>
+                </div>
+              </div>
+              <div class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <p class="text-sm text-yellow-800 font-medium">Precios sujetos a disponibilidad y pueden variar</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Botón de contacto -->
+        <div class="mt-12 text-center">
+          <a href="#contacto" class="inline-flex items-center gap-3 bg-gradient-to-r from-amber-600 to-yellow-500 text-yellow-900 px-8 py-4 rounded-xl shadow-lg hover:shadow-amber-200/50 transform hover:-translate-y-1 transition-all text-lg font-heading">
+            Consulta por mayoreo
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </a>
+        </div>
       </div>
     </div>
+  </section>
   </section>
 
   <!-- SECCIÓN 4: FORMULARIO DE CONTACTO/SUSCRIPCIÓN -->
-  <section id="contacto" class="bg-yellow-200 py-16 px-4">
-    <h3 class="font-heading text-3xl text-center mb-10 tracking-wide">Contáctanos</h3>
-    <form id="formulario-contacto" class="max-w-xl mx-auto bg-white rounded-xl shadow-lg p-8 space-y-6">
-      <div>
-        <label for="nombre" class="block text-yellow-900 font-heading mb-2">Nombre</label>
-        <input id="nombre" name="nombre" type="text" required class="w-full border border-yellow-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-amber-700 transition">
+  <section id="contacto" class="relative py-24 px-4 bg-gradient-to-b from-yellow-100 to-yellow-200 overflow-hidden">
+    <div class="container mx-auto relative z-10">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="inline-block bg-amber-100 text-amber-800 px-4 py-2 rounded-full text-sm font-semibold tracking-wide mb-4">Contacto</span>
+        <h3 class="font-display text-4xl mb-6 text-yellow-900">¿Necesitas ayuda con tu proyecto?</h3>
+        <p class="text-lg text-yellow-800">Estamos aquí para ayudarte. Contáctanos y te responderemos lo antes posible.</p>
       </div>
-      <div>
-        <label for="motivo" class="block text-yellow-900 font-heading mb-2">Motivo</label>
-        <select id="motivo" name="motivo" required class="w-full border border-yellow-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-amber-700 transition">
-          <option value="">Selecciona una opción</option>
-          <option value="cotizacion">Cotización</option>
-          <option value="pedido">Pedido</option>
-          <option value="consulta">Consulta</option>
-        </select>
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-2xl p-10">
+          <form id="formulario-contacto" class="grid md:grid-cols-2 gap-8">
+            <div class="md:col-span-2">
+              <label for="nombre" class="block text-yellow-900 font-heading text-lg mb-2">Nombre completo</label>
+              <input id="nombre" name="nombre" type="text" required 
+                class="w-full bg-white/50 border-2 border-yellow-200 rounded-xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-amber-600 focus:border-transparent transition-all text-lg"
+                placeholder="Ingresa tu nombre">
+            </div>
+            <div>
+              <label for="motivo" class="block text-yellow-900 font-heading text-lg mb-2">Motivo de contacto</label>
+              <select id="motivo" name="motivo" required 
+                class="w-full bg-white/50 border-2 border-yellow-200 rounded-xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-amber-600 focus:border-transparent transition-all text-lg appearance-none"
+                style="background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23B45309%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
+                      background-repeat: no-repeat;
+                      background-position: right 1rem center;
+                      background-size: 0.8em auto;">
+                <option value="">Selecciona una opción</option>
+                <option value="cotizacion">Cotización</option>
+                <option value="pedido">Pedido</option>
+                <option value="consulta">Consulta</option>
+              </select>
+            </div>
+            <div>
+              <label for="telefono" class="block text-yellow-900 font-heading text-lg mb-2">Teléfono</label>
+              <input id="telefono" name="telefono" type="tel" required
+                class="w-full bg-white/50 border-2 border-yellow-200 rounded-xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-amber-600 focus:border-transparent transition-all text-lg"
+                placeholder="Ej: 099 999 9999"
+                pattern="[0-9]{3}[\s-]?[0-9]{3}[\s-]?[0-9]{4}"
+                title="Ingrese un número de teléfono válido (Ej: 099 999 9999)">
+            </div>
+            <div class="md:col-span-2">
+              <label for="mensaje" class="block text-yellow-900 font-heading text-lg mb-2">Mensaje</label>
+              <textarea id="mensaje" name="mensaje" required rows="4"
+                class="w-full bg-white/50 border-2 border-yellow-200 rounded-xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-amber-600 focus:border-transparent transition-all text-lg resize-none"
+                placeholder="Describe tu proyecto o consulta"></textarea>
+            </div>
+            <div class="md:col-span-2">
+              <button type="submit"
+                class="w-full flex items-center justify-center gap-3 bg-gradient-to-r from-amber-600 to-yellow-500 text-yellow-900 font-heading text-xl py-4 px-8 rounded-xl shadow-lg hover:shadow-amber-200/50 transform hover:-translate-y-1 transition-all duration-300">
+                <span>Enviar mensaje</span>
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
-      <div>
-        <label for="mensaje" class="block text-yellow-900 font-heading mb-2">Mensaje</label>
-        <input id="mensaje" name="mensaje" type="text" required class="w-full border border-yellow-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-amber-700 transition">
-      </div>
-      <button 
-        type="submit"
-        class="w-full flex items-center justify-center gap-2 bg-amber-700 text-yellow-900 font-heading py-3 rounded-lg shadow-lg hover:bg-amber-800 transform hover:-translate-y-1 hover:scale-105 transition-all duration-200"
-      >
-        <svg class="w-5 h-5 text-yellow-900" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
-        Enviar
-      </button>
-    </form>
+    </div>
+    <!-- Decorative Elements -->
+    <div class="absolute top-0 left-0 w-72 h-72 bg-amber-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+    <div class="absolute top-0 right-0 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+    <div class="absolute -bottom-8 left-20 w-72 h-72 bg-amber-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
   </section>
+  
+  <style>
+    @keyframes blob {
+      0% { transform: translate(0px, 0px) scale(1); }
+      33% { transform: translate(30px, -50px) scale(1.1); }
+      66% { transform: translate(-20px, 20px) scale(0.9); }
+      100% { transform: translate(0px, 0px) scale(1); }
+    }
+    .animate-blob {
+      animation: blob 7s infinite;
+    }
+    .animation-delay-2000 {
+      animation-delay: 2s;
+    }
+    .animation-delay-4000 {
+      animation-delay: 4s;
+    }
+  </style>
 
   
   <!-- SECCIÓN 5: TABLA DE INTERACCIÓN CON FORMULARIO DE CONTACTO/SUSCRIPCIÓN -->
-  <section id="interaccion" class="container mx-auto py-20 px-4">
-    <h3 class="font-heading text-3xl text-center mb-10 tracking-wide">Contactos almacenados</h3>
-    <div id="results" class="max-w-xl mx-auto mt-10">
-      <!-- Aquí se insertará la tabla de motivos -->
+  <section id="interaccion" class="bg-yellow-100 py-20 px-4">
+    <div class="container mx-auto">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="inline-block bg-amber-100 text-amber-800 px-6 py-3 rounded-full text-lg font-semibold tracking-wide mb-6">Gestión de Contactos</span>
+        <h3 class="font-display text-5xl md:text-6xl mb-8 text-yellow-900 leading-tight">Contactos <span class="text-amber-600">Almacenados</span></h3>
+        <p class="text-xl text-yellow-800">Registro de todas las consultas y solicitudes recibidas.</p>
+      </div>
+      <div id="results" class="max-w-4xl mx-auto relative">
+        <div class="bg-white/80 backdrop-blur-sm shadow-2xl rounded-2xl overflow-hidden border border-yellow-200">
+          <div class="overflow-x-auto">
+            <table class="w-full">
+              <thead>
+                <tr class="bg-gradient-to-r from-amber-900 via-amber-800 to-yellow-800">
+                  <th class="py-6 px-6 text-left text-lg font-heading text-amber-100 font-bold tracking-wide">Persona</th>
+                  <th class="py-6 px-6 text-left text-lg font-heading text-amber-100 font-bold tracking-wide">Motivo</th>
+              </tr>
+            </thead>
+            <tbody id="tabla-contactos" class="bg-white divide-y divide-yellow-100">
+              <!-- Los datos se insertarán aquí dinámicamente -->
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
-
   </section>
 
-  
   <!-- FOOTER -->
-  <footer class="bg-yellow-900 text-white text-center py-6">
-    <p class="text-sm font-heading">&copy; 2025 Aserrio Pacheco</p>
+  <footer class="bg-gradient-to-b from-yellow-800 to-yellow-900 text-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-3 gap-12 items-center">
+        <div class="text-center md:text-left">
+          <h4 class="font-heading text-2xl mb-4 text-amber-100">Aserrio Pacheco</h4>
+          <p class="text-yellow-50">Calidad y experiencia en maderas</p>
+        </div>
+        <div class="text-center">
+          <div class="space-x-6">
+            <a href="#quienes" class="text-amber-100 hover:text-white transition-colors">Quiénes somos</a>
+            <a href="#productos" class="text-amber-100 hover:text-white transition-colors">Productos</a>
+            <a href="#precios" class="text-amber-100 hover:text-white transition-colors">Precios</a>
+          </div>
+        </div>
+        <div class="text-center md:text-right">
+          <p class="text-amber-100">&copy; 2025 Aserrio Pacheco</p>
+          <p class="text-amber-50/90 text-sm mt-2">Todos los derechos reservados</p>
+        </div>
+      </div>
+    </div>
   </footer>
   
 
-  <!-- MODAL DE ÉXITO FLOWBITE -->
+ <!-- MODAL DE ÉXITO FLOWBITE -->
 <div id="modal-exito" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full bg-black/40">
   <div class="relative w-full max-w-md max-h-full mx-auto mt-24">
-    <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-      <button type="button" class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center" data-modal-hide="modal-exito">
-        <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6.293 9.293a1 1 0 011.414 0L10 11.586l2.293-2.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+    <div class="relative bg-white rounded-lg shadow">
+      <button type="button" class="absolute top-3 right-2.5 text-gray-700 bg-transparent hover:bg-gray-300 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center" data-modal-hide="modal-exito">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
         <span class="sr-only">Cerrar modal</span>
       </button>
       <div class="p-6 text-center">
@@ -255,7 +716,7 @@
         <p class="mb-5 text-sm text-gray-500 dark:text-gray-400">
           Hemos recibido tu mensaje y nos pondremos en contacto contigo lo antes posible.
         </p>
-        <button data-modal-hide="modal-exito" type="button" class="text-white bg-amber-700 hover:bg-amber-800 focus:ring-4 focus:outline-none focus:ring-amber-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center">
+        <button data-modal-hide="modal-exito" type="button" class="text-gray-700 bg-gray-200 hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center">
           Cerrar
           <svg class="w-5 h-5 ml-2 -mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -279,7 +740,7 @@
         <div id="datos-confirmacion" class="mb-5 text-yellow-900 text-left"></div>
         <div class="flex justify-center gap-4">
           <button id="btn-cancelar-envio" data-modal-hide="modal-confirmacion" type="button" class="text-gray-700 bg-gray-200 hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5">Cancelar</button>
-          <button id="btn-confirmar-envio" type="button" data-modal-hide="modal-confirmacion" class="text-white bg-amber-700 hover:bg-amber-800 focus:ring-4 focus:outline-none focus:ring-amber-300 font-medium rounded-lg text-sm px-5 py-2.5">
+          <button id="btn-confirmar-envio" type="button" data-modal-hide="modal-confirmacion" class="text-gray-700 bg-gray-200 hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5">
             Confirmar y Enviar
           </button>
         </div>
@@ -287,6 +748,7 @@
     </div>
   </div>
 </div>
+
 
 <!-- Botón oculto para abrir modal de confirmación -->
 <button id="abrir-modal-confirmacion" type="button" data-modal-target="modal-confirmacion" data-modal-toggle="modal-confirmacion" class="hidden"></button>
