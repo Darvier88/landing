@@ -159,7 +159,6 @@ if (!startsWithValidPrefix) {
 
 // Inicializar todo
 document.addEventListener('DOMContentLoaded', () => {
-    enableForm();
     displayContact();
 });
 (() => {
