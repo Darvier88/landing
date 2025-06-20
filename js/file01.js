@@ -112,19 +112,29 @@ const enableForm = () => {
         mensaje: formData.get('mensaje'),
         telefono: formData.get('telefono') || 'No proporcionado'
     };
+    const phone = contactoData.telefono;
 
     if (!contactoData.nombre || !contactoData.motivo || !contactoData.mensaje || !contactoData.telefono) {
         alert("Por favor completa todos los campos requeridos, incluyendo el teléfono.");
         return;
     }
 
-    // Validar formato del teléfono
-    const phonePattern ="[0-9]{3}[\s-]?[0-9]{3}[\s-]?[0-9]{4}";
-    if (!phonePattern.test(contactoData.telefono)) {
-        alert("Por favor ingresa un número de teléfono válido (Ej: 099 999 9999)");
-        return;
-    }
+    const cleanedPhone = phone.replace(/[\s-]/g, '');
 
+// Verifica que el número tenga exactamente 10 dígitos numéricos
+if (cleanedPhone.length !== 10 || isNaN(cleanedPhone)) {
+    alert("Por favor ingresa un número de teléfono válido (Ej: 099 999 9999)");
+    return;
+}
+
+// Verifica que el número empieza con un valor adecuado (Ej: 099, 098, etc.)
+const validStartingDigits = ['099', '098', '097', '096']; // Puedes añadir más prefijos válidos si lo deseas
+const startsWithValidPrefix = validStartingDigits.some(prefix => cleanedPhone.startsWith(prefix));
+
+if (!startsWithValidPrefix) {
+    alert("Por favor ingresa un número de teléfono válido (Ej: 099 999 9999)");
+    return;
+}
     const resultado = await saveContact(
         contactoData.nombre,
         contactoData.motivo,
